@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/style.css">
     <title>AHGORA Filmes</title>
 </head>
+
 <body>
-<header>
-    <h1>Filmes</h1>
-</header>   
+    <section class="header">
+        <h2>ahgora</h2>
+    </section>
+    <header>
+        <h1 class="title">Filmes</h1>
+    </header>
+    <section class="section-movies">
+        <form class="forms-search">
+            <input class="input-search" value="" name="input-search"></input>
+            <button class="button-search">Aplicar</button>
+        </form>
+        <section class="table-movies">
+        <table>
+            <tr class="title-table">
+                <th class="title-table-head">
+                    <span>Titulo</span>
+                </th>
+                <th class="title-table-year">
+                    <span>Ano</span>
+                </th>
+                <th class="title-table-gender">
+                    <span>Gênero</span>
+                </th>
+            </tr>
 
-<section class="search-section">
-    <form action="">
-        <label for="input-search">search</label>
-        <input id="input-search" value=""  name="input-search"></input>
-        <button id="button-search">Aplicar</button>
-    </form>
-</section>
-<section>
-    <table>
-        <h2>TITULO</h2>
-        <th  class="title">
-            
-        </th>
-        <tr class="year">
-        <tr class="gender">
-       
-    </table>
-</section>
+            <tr class="column-table">
+                <td class="title-row">Avenger</td>
+                <td>2019</td>
+                <td class="gender-row">Ação</td>
+            </tr>
+        </table>
+    </section>
+    </section>
 
 
-<script src="/api/index.js"></script>
+    <script src="/api/index.js"></script>
 </body>
+
 </html>

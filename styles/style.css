@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+
+:root {
+  --main-white-color: #fafafa;
+  --main-fundo-color: #f1f2f5;
+  --main-button-color: #1199dd;
+  --main-title-color: #515163;
+  --main-text-color: #9196ac;
+  --main-title-table-color: #767e92;
+  --main-variacao-lista-color: #f5f6f8;
+  --border-button: 24px 24px;
+}
+
+.header {
+  background-color: black;
+  color: var(--main-white-color);
+  font: "Fira Sans", sans-serif;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.title {
+  color: var(--main-title-color);
+  font-family: "Fira Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  padding: 40px;
+}
+
+.section-movies {
+  background: var(--main-fundo-color);
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-movies{
+  height: 60vh;
+  background: var(--main-fundo-color);
+  box-shadow: 0.5px 1px 2px 1px var(--main-text-color);
+
+  margin:17px;
+}
+
+.input-search {
+  min-width: 92%;
+  height: 48px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  box-shadow: 0.5px 1px 2px 1px var(--main-text-color);
+  margin: 1% 0 0 1% ;
+}
+
+.button-search {
+    margin-left: -10px;
+    min-width: 100px;
+    height: 48.4px;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0.5px 1px 2px 1px var(--main-button-color);
+
+    text-align: center;
+    font-family: "Opens Sans", sans-serif;
+    font-weight: 600;
+   
+    color:var(--main-white-color);
+
+    background-color: var(--main-button-color);
+}
+
+.title-table{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+
+  box-shadow: 0px 1px 0 0  var(--main-text-color);
+  background-color: var(--main-white-color) ;
+  color: var(--main-title-table-color);
+
+}
+
+
+.column-table{
+
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  width: 97vw;
+  margin: 10px;
+  background-color:var(--main-variacao-lista-color);
+  
+}
+
+.title-table-head,.title-row{
+  width: 50%;
+  display: flex
+}
+
+.title-row{
+  color: var(--main-button-color);
+}
+
+.title-row,.gender-row{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.title-table-gender,.gender-row {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}

@@ -1,5 +1,5 @@
-const buttonSearch = document.querySelector("#button-search");
-const inputSearch = document.querySelector("#input-search");
+const buttonSearch = document.querySelector(".button-search");
+const inputSearch = document.querySelector(".input-search");
 const titleFilter = document.querySelector('.title');
 
 let title = "";
@@ -43,8 +43,8 @@ const showMovies = (data) => {
   }
 };
 
-const searchAllInfoMovies = async (moviesTitle) => {
-  const { imdbID } = moviesTitle;
+const searchAllInfoMovies = async (movieTitle) => {
+  const { imdbID } = movieTitle;
 
   await fetch(`${URL + KEY}&i=${imdbID}`).then((data) => {
     data.json().then((result) => {
@@ -53,7 +53,7 @@ const searchAllInfoMovies = async (moviesTitle) => {
   });
 };
 
-const infoMovies = (info) => {
+const infoMovie = (info) => {
 
     const { Title } = info;
     const tableRow = document.createElement('tr');
@@ -68,7 +68,7 @@ const infoMovies = (info) => {
 
 
 
-buttonSearch.addEventListener("click", (e) => {
-  e.preventDefault();
-  fetchApi();
-});
+// buttonSearch.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   fetchApi();
+// });
