@@ -1,10 +1,10 @@
 const buttonSearch = document.querySelector(".button-search");
 const inputSearch = document.querySelector(".input-search");
-const titleFilter = document.querySelector('.title');
+const table = document.querySelector('.table');
 
 let title = "";
+let totalPage = 10;
 
-const allMovies = [];
 const handleInput = (e) => {
   title = `&s=${e.target.value}`;
 };
@@ -13,7 +13,7 @@ inputSearch.addEventListener("input", handleInput);
 
 const URL = "http://www.omdbapi.com/?";
 const KEY = "apikey=7f669f15";
-const PAGE = "&page=10";
+const PAGE = `&page=${totalPage}`;
 
 const options = {
   method: "GET",
@@ -36,39 +36,83 @@ const fetchApi = async () => {
 };
 
 const showMovies = (data) => {
+  
+  if(data.Response == 'False'){
+    return  ;
+  }
   const { Search } = data;
   
-  for (const movies of Search) {
-    searchAllInfoMovies(movies);
+  for (const movie of Search) {
+    searchAllInfoMovie(movie);
   }
 };
 
-const searchAllInfoMovies = async (movieTitle) => {
+
+const searchAllInfoMovie = async (movieTitle) => {
   const { imdbID } = movieTitle;
 
-  await fetch(`${URL + KEY}&i=${imdbID}`).then((data) => {
+ await fetch(`${URL + KEY}&i=${imdbID}&type=movie`).then((data) => {
     data.json().then((result) => {
-        infoMovies(result);
+      insertMoviesInTable(result);
     });
   });
 };
 
-const infoMovie = (info) => {
+//Criando as linhas da tabela
+const insertMoviesInTable = (movies)  => {
+  const { Title, Year, Genre } = movies;
 
-    const { Title } = info;
-    const tableRow = document.createElement('tr');
+  let row = document.createElement('tr');
+  let titleRow = document.createElement('td');
+  let yearRow = document.createElement('td');
+  let genderRow = document.createElement('td');
 
-    tableRow.id = "title-movies"
-    tableRow.innerText = Title;
-
-
-    titleFilter.appendChild(tableRow)
   
-};
+    titleRow.className = "title-row";
+    genderRow.className = "gender-row";
+    yearRow.className = "year-row";
+    
+    titleRow.innerText = Title;
+    yearRow.innerText = Year;
+    genderRow.innerText = Genre;
 
+    row.appendChild(titleRow);
+    row.appendChild(yearRow);
+    row.appendChild(genderRow);
+    table.children.length % 2 == 0 ? row.className = "row-table color-white-list" : row.className ="row-table";
 
+    table.appendChild(row);
+   
+}
 
-// buttonSearch.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   fetchApi();
-// });
+const resetTable = () => {
+  if(table.children.length >= 10) {
+
+  table.innerHTML = ''; 
+  let titleTable = document.createElement('tr');
+  let titleRow = document.createElement('td');
+  let yearRow = document.createElement('td');
+  let genderRow = document.createElement('td');
+
+    titleTable.className = "title-table";
+    titleRow.className = "title-table-head";
+    genderRow.className = "title-table-gender";
+    yearRow.className = "title-table-year";
+
+    titleRow.innerText = "Titulo";
+    genderRow.innerText = "Gênero";
+    yearRow.innerText = "Ano";
+    
+    titleTable.appendChild(titleRow);
+    titleTable.appendChild(yearRow);
+    titleTable.appendChild(genderRow);
+
+    table.appendChild(titleTable); 
+  }
+}
+
+buttonSearch.addEventListener("click", (e) => {
+  e.preventDefault();
+  resetTable();
+  fetchApi();
+});

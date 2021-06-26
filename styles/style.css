@@ -7,49 +7,66 @@
   --main-button-color: #1199dd;
   --main-title-color: #515163;
   --main-text-color: #9196ac;
-  --main-title-table-color: #767e92;
+  --main-table-text-color: #767e92;
   --main-variacao-lista-color: #f5f6f8;
   --border-button: 24px 24px;
 }
 
 .header {
+  padding: 10px;
+  display: flex;
   background-color: black;
   color: var(--main-white-color);
-  font: "Fira Sans", sans-serif;
-  font-size: 14px;
-  padding: 10px;
+  align-items: center;
+}
+
+.logo{
+width: 2%;
 }
 
 .title {
-  color: var(--main-title-color);
   font-family: "Fira Sans", sans-serif;
   font-size: 30px;
   font-weight: 400;
   padding: 40px;
+  color: var(--main-title-color);
 }
 
 .section-movies {
-  background: var(--main-fundo-color);
   height: 75vh;
   display: flex;
   flex-direction: column;
+
+  background: var(--main-fundo-color);
 }
 
 .table-movies{
   height: 60vh;
-  background: var(--main-fundo-color);
   box-shadow: 0.5px 1px 2px 1px var(--main-text-color);
+  border-radius: 4px;
+  margin:1.3% 2% 0 1% ;
 
-  margin:17px;
+  background: var(--main-fundo-color);
 }
 
 .input-search {
-  min-width: 92%;
+  min-width: 92vw;
   height: 48px;
   border-radius: 4px 0 0 4px;
   border: none;
   box-shadow: 0.5px 1px 2px 1px var(--main-text-color);
   margin: 1% 0 0 1% ;
+  background-color: var( --main-white-color);
+  
+  background-image: url("../page/svg/search_black_24dp.svg");
+  background-position: 10px;
+  
+  background-repeat: no-repeat;
+  padding-left: 40px;
+
+  font-family: "Opens Sans",sans-serif;
+  color: var(--main-title-color);
+
 }
 
 .button-search {
@@ -64,31 +81,40 @@
     font-weight: 600;
    
     color:var(--main-white-color);
-
     background-color: var(--main-button-color);
+
+    cursor: pointer;
+}
+
+.button-search:active {
+  background-color:blue;
+  transition: 0.3s ease all;
 }
 
 .title-table{
   display: flex;
   justify-content: space-around;
-  padding: 10px;
-
+  margin-right: 17px;
+  width: 96.7vw;
   box-shadow: 0px 1px 0 0  var(--main-text-color);
   background-color: var(--main-white-color) ;
-  color: var(--main-title-table-color);
+  color: var(--main-table-text-color);
+  font-weight: 400;
+  padding: 10px 0;
 
 }
 
-
-.column-table{
-
+.row-table{
   display: flex;
   justify-content: space-around;
-  padding: 10px;
-  width: 97vw;
-  margin: 10px;
-  background-color:var(--main-variacao-lista-color);
-  
+  width: 96.7vw;
+  align-items: center;
+  height: 51.4px;
+
+  font-family: "Opens Sans",sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--main-text-color);
 }
 
 .title-table-head,.title-row{
@@ -100,14 +126,75 @@
   color: var(--main-button-color);
 }
 
-.title-row,.gender-row{
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
+.color-white-list{
+  background-color: var(--main-variacao-lista-color);
 }
 
 .title-table-gender,.gender-row {
+  width: 15%;
+  display: flex;
+  justify-content: start;
+}
+
+.year-row,.title-table-year{
   width: 30%;
   display: flex;
-  justify-content: center;
+  justify-content: start;
+}
+
+
+@media (max-width:1350px){
+  .input-search {
+    min-width: 89%;
+  }
+  
+}
+
+@media (max-width:950px){
+  .input-search {
+    min-width: 87%;
+  }
+  .button-search {
+    min-width: 80px;
+  }
+}
+
+@media (max-width:750px){
+  .input-search {
+    min-width: 85%;
+  }
+  .button-search {
+    min-width: 70px;
+  }
+  .title{
+    text-align: center;
+  }
+}
+
+@media (max-width:460px){
+  .input-search {
+    min-width: 80%;
+  }
+  .button-search {
+    min-width: 75px;
+  }
+
+  .row-table{
+    font-size: 10px;
+    height: 40px;
+  }
+  
+  .title{
+    text-align: center;
+  }
+}
+
+@media (max-width:380px){
+  .input-search {
+    min-width: 77%;
+  }
+  .button-search {
+    min-width: 75px;
+  }
+
 }
