@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/reset.css "">
-    <link rel="stylesheet" href="../styles/style.css "">
+    <link rel="stylesheet" href="./styles/reset.css "">
+    <link rel="stylesheet" href="./styles/style.css "">
     <title>AHGORA Filmes</title>
 </head>
 
 <body>
     <section class="header">
-        <img class="logo" src="image/ahgora.png" alt="logo da ahgora">
+        <img class="logo" src="./page/image/ahgora.png" alt="logo da ahgora">
         <h2>ahgora</h2>
     </section>
     <header>
@@ -39,12 +39,17 @@
                     <span>Gênero</span>
                 </th>
             </tr>           
+            <tbody class="table-body"></tbody>
         </table>
     </section>
     </section>
 
 
-    <script src="../api/index.js"></script>
+   
+    <script type="module" type="text/javascript" src="./js/view/addMovie.js"></script>
+    <script type="module" type="text/javascript" src="./js/view/table.js"></script>
+    <script type="module" type="text/javascript" src="./js/controller/controller.js"></script>
+    <script type="module" type="text/javascript" src="./js/model/model.js"></script>
 </body>
 
 </html>
