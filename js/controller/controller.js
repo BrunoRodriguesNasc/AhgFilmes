@@ -1,18 +1,15 @@
-// import { setMovies }  from '../model.js';
-// import { addMovie }  from '../addMovie.js';
-// import { table } from '.table.js';
-// import { searchAllInfoMovie } from '../moviesInfo.js'
+import { setMovies }  from '../model/model.js';
+import { table } from '../view/table.js';
+import { searchAllInfoMovie } from '../model/moviesInfo.js'
 
-// export function getMovies(movies){
-//     setMovies(movies);
-// }
+export function getMovies(movies){
+    setMovies(movies);
+}
 
-// export function getAllInfoMovies(movies){
-//     searchAllInfoMovie(movies)
-// }
+export function getAllInfoMovies(movies){
+    searchAllInfoMovie(movies)
+}
 
-// export function getAllMoviesTable(movies){
-//     table(movies);
-// }
-
-console.log('oi')
+export function getAllMoviesTable(movies){
+    table(movies);
+}
