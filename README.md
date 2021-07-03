@@ -2,22 +2,22 @@
 
 Projeto para buscar filmes
 
-## Description
+## Descrição
 
 Esse projeto busca os filmes que o usuario procurar. 
 
-## Getting Started
+## Iniciando
 
 É necessário ter algum gerenciador de arquivos
 ex:npm ou yarn.
 
-### Installing
+### Instalando as dependencias
 ```
 npm i 
 ```
 para instalar as dependencias 
 
-### Executing program
+### executando o programa
 
 ```
 npm start 
