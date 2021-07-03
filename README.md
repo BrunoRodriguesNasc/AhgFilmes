@@ -15,14 +15,10 @@ ex:npm ou yarn.
 ```
 npm i 
 ```
-para instalar as dependencias 
-
 ### executando o programa
-
 ```
 npm start 
 ```
-para rodar o programa
 
 ## Author
 
