@@ -4,7 +4,10 @@
   "description": "Uma tabela de filmes",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run open",
+    "open": "concurrently \"http-server -a localhost -p 1234\" \"open http://localhost:1234/build\""
+
   },
   "repository": {
     "type": "git",
@@ -13,11 +16,16 @@
   "keywords": [
     "AhgFIlmes"
   ],
+  
   "author": "Bruno Rodrigues",
   "license": "ISC",
   "type": "module",
   "bugs": {
     "url": "https://github.com/bruno-ctrl/AhgFIlmes/issues"
   },
-  "homepage": "https://github.com/bruno-ctrl/AhgFIlmes#readme"
+  "homepage": "https://github.com/bruno-ctrl/AhgFIlmes#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "http-server": "^0.12.3"
+  }
 }

@@ -1,11 +1,23 @@
+import Controller from "../controller/controller.js";
+
 export function table(movies) {
+  const controller = new Controller();
+
   const tableBody = document.querySelector(".table-body");
   tableBody.innerHTML = "";
+  tableBody.addEventListener('click',(e) => {
+    if(e.target.id){
+      controller.getMovieModal(e.target.id)
 
-  movies.map((movie) => {
-    const { Title, Year, Genre, imdbID } = movie;
- 
-    const rows = `   
+    }
+  })
+
+  if (movies) {
+    movies.map((movie) => {
+      const { Title, Year, Genre, imdbID } = movie;
+
+   
+      const rows = `   
   <tr class="${
     tableBody.children.length % 2 == 0
       ? "row-table color-white-list"
@@ -16,6 +28,12 @@ export function table(movies) {
     <td class="year-row">${Genre}</td>
   </tr>
    `;
-    return (tableBody.innerHTML += rows);
-  });
+ 
+      return (tableBody.innerHTML += rows);
+    });
+  }
+  else{
+    alert("Nenhum filme encontrado");
+  }  
+ 
 }
