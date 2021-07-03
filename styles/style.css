@@ -71,7 +71,7 @@
 
 .button-search {
   margin-left: -10px;
-  min-width: 100px;
+  min-width: 90px;
   height: 48.4px;
   border-radius: 0 4px 4px 0;
   box-shadow: 0.5px 1px 2px 1px var(--main-button-color);

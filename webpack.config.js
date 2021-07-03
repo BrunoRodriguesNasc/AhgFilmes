@@ -1,5 +1,7 @@
 import  HtmlWebPackPlugin from 'html-webpack-plugin';
+import path from 'path';
 
+const __dirname = path.resolve();
 export default {
     entry:{
         model: ['babel-polyfill', './js/model/moviesInfo.js'],
@@ -10,7 +12,7 @@ export default {
 
     },
     output:{
-        path: "/home/ahgora/Área de Trabalho/ahgfilmes/dist",
+        path: __dirname+"/dist",
         filename: '[name]-[hash].js'
     },
     module:{
@@ -25,7 +27,7 @@ export default {
     plugins: [
         new HtmlWebPackPlugin({
             filename:'index.html',
-            template:'/home/ahgora/Área de Trabalho/ahgfilmes/index.html'
+            template: __dirname+'/index.html'
         })
     ]
 }
