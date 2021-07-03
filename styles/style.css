@@ -125,6 +125,11 @@
   color: var(--main-button-color);
 }
 
+.title-row:hover {
+  color: #044e72;
+  cursor: pointer;
+}
+
 .color-white-list{
   background-color: var(--main-variacao-lista-color);
 }

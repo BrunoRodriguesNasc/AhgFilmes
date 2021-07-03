@@ -1,5 +1,9 @@
-import { getMovies } from '../controller/controller.js'
+import Controller from '../controller/controller.js';
+
 export function addMovie(){
+  
+const controller = new Controller();
+
 
   let movieTitle = '';
   const buttonSearch = document.querySelector('.button-search');
@@ -14,7 +18,7 @@ export function addMovie(){
 
   buttonSearch.addEventListener("click", (e) => {
     e.preventDefault();
-    getMovies(movieTitle);
+    controller.getMovies(movieTitle);
     
   });
 };
