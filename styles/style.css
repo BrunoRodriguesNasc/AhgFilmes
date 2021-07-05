@@ -135,18 +135,19 @@
   background-color: var(--main-variacao-lista-color);
 }
 
-.title-table-gender,
-.gender-row {
+.year-row,.title-table-year,.title-table-gender,.gender-row {
   width: 15%;
   display: flex;
   justify-content: start;
 }
 
-.year-row,
-.title-table-year {
-  width: 30%;
-  display: flex;
-  justify-content: start;
+
+tbody tr {
+  background-color: var(--main-fundo-color);
+}
+
+tr:nth-child(even) {
+  background-color: var(--main-variacao-lista-color);
 }
 
 /*Modal */

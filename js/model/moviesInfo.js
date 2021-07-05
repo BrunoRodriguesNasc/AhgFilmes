@@ -1,40 +1,38 @@
-import Controller from "../controller/controller.js";
+const apiKey = "ed5b01ef";
+const url = `http://www.omdbapi.com/?apikey=${apiKey}`;
 
-export async function searchAllInfoMovie(movies) {
-  const controller = new Controller();
-  const allMovies = [];
-
-  if (movies) {
-    for (const movieID of movies) {
-      allMovies.push(
-        await fetch(`${controller.url}&i=${movieID.imdbID}`).then((data) => {
-          return data.json();
-        })
-      );
-    }
-    return controller.getAllMoviesTable(allMovies);
-  }
-  return controller.getAllMoviesTable();
+async function request(req) {
+  let response = await fetch(`${url}${req}`);
+  return response.json();
 }
 
-export async function setMovies(movie) {
-  const controller = new Controller();
+export async function searchAllInfoMovie(idMovies) {
+  const infoMovies = idMovies.map(async (imdbID) => {
+    return await request(`&i=${imdbID}`);
+    })
+  return Promise.all(infoMovies);
+}
 
-  const data = await fetch(`${controller.url}&s=${movie}`)
-    .then((data) => data.json())
-    .catch((err) => {
-      throw new Error("Erro ao consultar a api " + err);
-    });
+function prepareMovie(movie) {
+  return{
+  id: movie.imdbID,
+  title: movie.Title,
+  genre: movie.Genre,
+  year: movie.Year,
+  awards: movie.Awards,
+  plot:movie.Plot,
+  poster:movie.Poster,
+  Director:movie.Director,
+  }
+}
 
-  controller.getAllInfoMovies(data.Search);
+export async function getMoviesModel(movie) {
+  const data =  await request(`&s=${movie}`);
+  return data.Search;
 }
 
 //Pega um unico id para procurar na api e preencher o modal
-export async function getMovieById(id) {
-  const controller = new Controller();
- const data =  await fetch(`${controller.url}&i=${id}&plot=short`).then((data) => {
-    return data.json();
-  })
-
-  controller.setMovieModal(data);
+export async function getMovieById(imdbID) {
+  const data = await request(`&i=${imdbID}`)
+  return prepareMovie(data);
 }

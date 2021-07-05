@@ -1,9 +1,6 @@
-import Controller from "../controller/controller.js";
-
 export function modal(movie) {
 
-const controller = new Controller();
-const {Plot,Year,Poster,Awards,Director,Genre,Title} = movie;
+const {plot,year,poster,awards,director,genre,title} = movie;
 
 const bodyModal = document.querySelector('.background-body');
 bodyModal.innerHTML = '';
@@ -13,16 +10,16 @@ bodyModal.innerHTML += `
     <div class="modal">
         <div class="modal-image">
             <img class="poster"
-                src=${Poster}
-                alt="${Title}">
+                src=${poster}
+                alt="${title}">
         </div>
         <div class="modal-info">
-            <h2>${Title}</h2>
-            <p>${Plot}</p>
-            <h3>Ano:${Year}</h3>
-            <h3>Gênero:${Genre}</h3>
-            <h3>Direção:${Director}</h3>
-            <h3>Prêmios:${Awards}</h3> 
+            <h2>${title}</h2>
+            <p>${plot}</p>
+            <h3>Ano:${year}</h3>
+            <h3>Gênero:${genre}</h3>
+            <h3>Direção:${director}</h3>
+            <h3>Prêmios:${awards}</h3> 
             <div class="modal-button">
                 <button class="button-modal">OK</button>
            </div>   
@@ -32,8 +29,6 @@ bodyModal.innerHTML += `
 </div>
 
 `;
-
-
 
 document.body.addEventListener('click', ()=>{
     newSearch();

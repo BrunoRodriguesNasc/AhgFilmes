@@ -5,9 +5,10 @@ const __dirname = path.resolve();
 export default {
     entry:{
         model: ['babel-polyfill', './js/model/moviesInfo.js'],
+        index:'./js/index.js',
+        input:'./js/view/inputs.js',
         controller:'./js/controller/controller.js',
         table:'./js/view/table.js',
-        input:'./js/view/inputs.js',
         modal:'./js/view/modal.js'
 
     },
