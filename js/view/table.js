@@ -9,12 +9,12 @@ export function table(movies,getMovieByIdView) {
     }
   })
     movies.map((movie) => {
-      const { Title, Year, Genre, imdbID } = movie; 
+      const { title, year, genre, id } = movie; 
       const rows = `   
   <tr class="row-table" />
-    <td id=${imdbID} class="title-row">${Title}</td>
-    <td class="gender-row">${Year}</td>
-    <td class="year-row">${Genre}</td>
+    <td id=${id} class="title-row">${title}</td>
+    <td class="gender-row">${year}</td>
+    <td class="year-row">${genre}</td>
   </tr>
    `;
  

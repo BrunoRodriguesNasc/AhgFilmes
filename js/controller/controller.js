@@ -6,9 +6,10 @@ import { modal } from "../view/modal.js";
 import inicialize from "../view/inputs.js";
 
 async function getMoviesController(movies) {
-    const allMovies = await getMoviesModel(movies);
-    const idMovies = allMovies.map(movie => movie.imdbID);
+    const allMovies = await getMoviesModel(movies);   
+    const idMovies = allMovies.map(movie => movie.id);
     const moviesInfo = await searchAllInfoMovie(idMovies);
+    
     table(moviesInfo,getMovieByIdController);
 }
 
