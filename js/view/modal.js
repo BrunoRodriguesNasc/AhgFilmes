@@ -1,8 +1,9 @@
 export function modal(movie) {
 
+const bodyModal = document.querySelector('.background-body');
+const modal = document.querySelector('.modal');
 const {plot,year,poster,awards,director,genre,title} = movie;
 
-const bodyModal = document.querySelector('.background-body');
 bodyModal.innerHTML = '';
 bodyModal.classList.add('show')
 bodyModal.innerHTML += `
@@ -32,13 +33,13 @@ bodyModal.innerHTML += `
 
 document.body.addEventListener('click', ()=>{
     newSearch();
-})
+});
 
-const modal = document.querySelector('.modal'
-);
+
+
+
 const newSearch = () => {
-   bodyModal.classList.remove('show');
-    
-}
+   bodyModal.classList.remove('show'); 
+    }
 }
 

@@ -7,7 +7,7 @@ export function table(movies,getMovieByIdView) {
       getMovieByIdView(e.target.id);
 
     }
-  })
+  }) 
     movies.map((movie) => {
       const { title, year, genre, id } = movie; 
       const rows = `   
@@ -18,7 +18,7 @@ export function table(movies,getMovieByIdView) {
   </tr>
    `;
  
-      return (tableBody.innerHTML += rows);
+      return tableBody.innerHTML += rows;
   });
 }
  

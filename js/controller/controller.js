@@ -1,23 +1,23 @@
-import { getMoviesModel } from "../model/moviesInfo.js";
+import { searchMoviePerTitle } from "../model/movies.js";
 import { table } from "../view/table.js";
-import { searchAllInfoMovie } from "../model/moviesInfo.js";
-import { getMovieById } from "../model/moviesInfo.js";
+import { searchAllInfoMoviePerId } from "../model/movies.js";
+import { searchMovieById } from "../model/movies.js";
 import { modal } from "../view/modal.js";
 import inicialize from "../view/inputs.js";
 
-async function getMoviesController(movies) {
-    const allMovies = await getMoviesModel(movies);   
+async function getMovies(movies) {
+    const allMovies = await searchMoviePerTitle(movies);   
     const idMovies = allMovies.map(movie => movie.id);
-    const moviesInfo = await searchAllInfoMovie(idMovies);
+    const moviesInfo = await searchAllInfoMoviePerId(idMovies);
     
-    table(moviesInfo,getMovieByIdController);
+    table(moviesInfo,getMovieById);
 }
 
-async function getMovieByIdController(imdbID){
-    const movie = await getMovieById(imdbID);
+async function getMovieById(imdbID){
+    const movie = await searchMovieById(imdbID);
     modal(movie);
 }
 
 export function init() {
-   inicialize(getMoviesController);
+   inicialize(getMovies);
 }
