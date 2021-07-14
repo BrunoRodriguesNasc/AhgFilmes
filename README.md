@@ -19,6 +19,9 @@ npm i
 ```
 npm start 
 ```
+### Acessar via
+```
+acessar localhost:8080
 
 ## Author
 
