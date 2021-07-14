@@ -1,7 +1,7 @@
-import { searchMoviePerTitle } from "../model/movies.js";
+import { searchMoviePerTitle } from "../model/movie/movies.js";
 import { table } from "../view/table.js";
-import { searchAllInfoMoviePerId } from "../model/movies.js";
-import { searchMovieById } from "../model/movies.js";
+import { searchAllInfoMoviePerId } from "../model/movie/movies.js";
+import { searchMovieById } from "../model/movie/movies.js";
 import { modal } from "../view/modal.js";
 import inicialize from "../view/inputs.js";
 

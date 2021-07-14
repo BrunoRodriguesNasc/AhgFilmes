@@ -4,7 +4,7 @@ import path from 'path';
 const __dirname = path.resolve();
 export default {
     entry:{
-        model: ['babel-polyfill', './js/model/movies.js'],
+        model: ['babel-polyfill', './js/model/movie/movies.js'],
         index:'./js/index.js',
         input:'./js/view/inputs.js',
         controller:'./js/controller/controller.js',

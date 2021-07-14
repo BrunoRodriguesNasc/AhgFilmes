@@ -1,5 +1,6 @@
 const apiKey = "ed5b01ef";
 const url = `http://www.omdbapi.com/?apikey=${apiKey}`;
+const fetch = require("node-fetch");
 
 async function request(req) {
   let response = await fetch(`${url}${req}`);
@@ -70,6 +71,8 @@ export async function searchMovieById(imdbID) {
     const movieById = await request(`&i=${imdbID}`);
     return prepareMovie(movieById);
   } catch (error) {
+    console.log(error)
     throw new Error("Erro ao consultar os filmes por ID!");
   }
 }
+
